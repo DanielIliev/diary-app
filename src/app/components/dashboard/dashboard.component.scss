@@ -1,0 +1,13 @@
+.tasks-container {
+    margin: 16px;
+    text-align: center;
+    display: block;
+    margin: 100px;
+
+    .task-block {
+        padding: 16px;
+        margin: 16px 0;
+        background-color: #eee;
+        border-radius: 16px;
+    }
+}

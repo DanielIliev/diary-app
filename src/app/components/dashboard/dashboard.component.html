@@ -1,0 +1,16 @@
+<div class="tasks-container">
+    <h1>My Notes</h1>
+    <div *ngFor="let element of data;">
+        <div class="task-block">
+            <div class="task-title">
+                <h1>{{ element.title }}</h1>
+            </div>
+            <p class="task-content">
+                {{ element.content }}
+            </p>
+            <div class="task-info">
+                <span>Created on: {{ element.createdOn }} | Due to: {{ element.dueTo }} | Priority: {{ element.priority }}</span>
+            </div>
+        </div>
+    </div>
+</div>
