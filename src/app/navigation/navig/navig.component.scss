@@ -1,18 +1,49 @@
-nav {
-    background: #097969;
-    color: #fff;
-    margin: 0;
-    overflow: hidden;
+header {
     position: fixed;
-    padding: 16px;
     top: 0;
     width: 100%;
+    background-color: #0A1045;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 10%;
+    font-size: 24px;
 
-    a {
-        font-size: 1.5em;
+    .logo {
+        margin-right: auto;
+        color: #fff;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
-    a:hover {
-        cursor: pointer;
+    nav {
+        li {
+            display: inline-block;
+            padding: 0 20px;
+
+            a {
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+                color: #fff;
+
+                &:hover {
+                    color: #AAA;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:768px) {
+    header {
+        justify-content: center;
+        flex-direction: column;
+
+        nav {
+            li {
+                margin: 16px 0 0 0;
+            }
+        }
     }
 }
