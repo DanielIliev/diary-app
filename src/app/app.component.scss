@@ -1,0 +1,9 @@
+.content-container {
+    padding: 100px 50px;
+}
+
+@media all and (max-width: 768px) {
+    .content-container {
+        padding: 0;
+    }
+}

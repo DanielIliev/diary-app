@@ -71,4 +71,8 @@ export class HomeComponent {
       priority: 'low-priority',
     },
   ];
+
+  triggerModal(elementId: number) {
+    console.log(`I want to display modal for ID: ${elementId}`);
+  }
 }

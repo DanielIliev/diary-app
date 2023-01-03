@@ -1,12 +1,28 @@
 .tasks-container {
     margin: 16px;
-    text-align: center;
-    display: block;
+    display: flex;
+    // justify-content: space-between;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-basis: 25%;
+    gap: 25px;
+    row-gap: 30px;
 
     .task-block {
+        transition: all ease 0.3s 0s;
         padding: 16px;
-        margin: 16px 0;
         background-color: #eee;
         border-radius: 16px;
+        height: 300px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #ddd;
+        }
+
+        .task-title {
+            text-align: center;
+            margin: 16px 0;
+        }
     }
 }
