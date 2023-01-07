@@ -1,16 +1,25 @@
-<header>
-    <h3 class="logo" routerLink="/">Todo App</h3>
-    <nav>
-        <ul>
+<nav>
+    <mat-toolbar>
+        <span class="logo" routerLink="/">Todo App</span>
+        <ul class="nav-links">
             <li>
-                <a routerLink="/home">Home</a>
+                <button class="mobile-link" mat-icon-button aria-label="Home button" routerLink="/home">
+                    <mat-icon>home</mat-icon>
+                </button>
+                <a class="desktop-link" routerLink="/home">Home</a>
             </li>
             <li>
-                <a routerLink="/notes">My Notes</a>
+                <button class="mobile-link" mat-icon-button aria-label="Notes button" routerLink="/notes">
+                    <mat-icon>event</mat-icon>
+                </button>
+                <a class="desktop-link" routerLink="/notes">My Notes</a>
             </li>
             <li>
-                <a routerLink="/about">About</a>
+                <button class="mobile-link" mat-icon-button aria-label="About button" routerLink="/about">
+                    <mat-icon>info</mat-icon>
+                </button>
+                <a class="desktop-link" routerLink="/about">About</a>
             </li>
         </ul>
-    </nav>
-</header>
+    </mat-toolbar>
+</nav>

@@ -1,50 +1,51 @@
-header {
+mat-toolbar {
     position: fixed;
     top: 0;
-    width: 100%;
     background-color: #0A1045;
-    display: flex;
-    justify-content: flex-end;
-    padding: 30px 10%;
+    color: #fff;
     font-size: 24px;
+    display: flex;
 
     .logo {
         margin-right: auto;
-        color: #fff;
 
         &:hover {
             cursor: pointer;
         }
     }
 
-    nav {
+    .nav-links {
+        justify-content: flex-end;
+        list-style: none;
+        align-items: center;
+
         li {
             display: inline-block;
+            justify-content: space-around;
             padding: 0 20px;
+        }
+        
+        a {
+            
+            transition: all ease 0.3s 0s;
+            color: #fff;
+            text-decoration: none;
 
-            a {
-                transition: all 0.3s ease 0s;
-                text-decoration: none;
-                color: #fff;
-
-                &:hover {
-                    color: #AAA;
-                }
+            &:hover {
+                color: #ddd;
             }
         }
     }
 }
 
-@media all and (max-width:768px) {
-    header {
-        justify-content: center;
-        flex-direction: column;
-        position: relative;
+@media all and (min-width: 768px) {
+    .mobile-link {
+        display: none;
+    }
+}
 
-        nav {
-            li {
-                margin: 16px 0 0 0;
-            }
-        }
+@media all and (max-width:768px) {
+    .desktop-link {
+        display: none;
     }
 }

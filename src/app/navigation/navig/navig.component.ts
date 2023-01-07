@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./navig.component.scss']
 })
 export class NavigComponent {
-  pesho() {
-    console.log('Das shnitzel');
+  toggleMenu() {
+    
+    
   }
 }
