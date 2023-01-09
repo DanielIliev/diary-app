@@ -28,5 +28,11 @@
 @media all and (max-width: 768px) {
     .tasks-container {
         padding: 0;
+        display: block;
+
+        .task-block {
+            width: 100%;
+            margin: 16px 0;
+        }
     }
 }
