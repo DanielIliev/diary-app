@@ -4,14 +4,17 @@ mat-toolbar {
     background-color: #a0744f;
     color: #fff;
     font-size: 24px;
+    font-weight: 600;
     display: flex;
     z-index: 1000;
 
     .logo {
         margin-right: auto;
+        transition: color ease 0.3s 0s;
 
         &:hover {
             cursor: pointer;
+            color: #ddd;
         }
     }
 

@@ -1,0 +1,19 @@
+.modal-block {
+    overflow: hidden;
+
+    .note-title {
+        width: 100%;
+        padding: 8px;
+        background-color: #a0744f;
+        color: #fff;
+        width: 100%;
+    }
+
+    .note-content {
+        padding: 24px;
+    }
+
+    .note-footer {
+        padding: 16px;
+    }
+}

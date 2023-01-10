@@ -1,6 +1,6 @@
 <div class="tasks-container">
     <div *ngFor="let note of notes; let noteId = index;">
-        <div class="task-block" (click)="triggerModal(noteId)">
+        <div class="task-block" (click)="triggerModal(noteId)" title="Show more...">
             <div class="task-title">
                 <h1>{{ note.title }}</h1>
             </div>
