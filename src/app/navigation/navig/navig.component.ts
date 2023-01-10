@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navig.component.scss']
 })
 export class NavigComponent {
-  toggleMenu() {
-    
-    
-  }
+
 }

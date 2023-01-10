@@ -1,1 +1,15 @@
-<p>notes works!</p>
+<div class="tasks-container">
+    <div *ngFor="let note of notes; let noteId = index;">
+        <div class="task-block" (click)="triggerModal(noteId)">
+            <div class="task-title">
+                <h1>{{ note.title }}</h1>
+            </div>
+            <p class="task-content">
+                {{ note.content }}
+            </p>
+            <div class="task-info">
+                <span>Created on: {{ note.createdOn }} | Due to: {{ note.dueTo }} | Priority: {{ note.priority }}</span>
+            </div>
+        </div>
+    </div>
+</div>

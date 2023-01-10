@@ -1,10 +1,11 @@
 mat-toolbar {
     position: fixed;
     top: 0;
-    background-color: #0A1045;
+    background-color: #a0744f;
     color: #fff;
     font-size: 24px;
     display: flex;
+    z-index: 1000;
 
     .logo {
         margin-right: auto;

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavigComponent } from './navigation/navig/navig.component';
-import { HomeComponent } from './components/home/home.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,6 @@ import { NoteDialogComponent } from './components/note-dialog/note-dialog.compon
     AppComponent,
     DashboardComponent,
     NavigComponent,
-    HomeComponent,
     NotesComponent,
     AboutComponent,
     NoteDialogComponent
