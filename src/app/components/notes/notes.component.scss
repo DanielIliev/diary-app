@@ -1,14 +1,43 @@
-.tasks-container {
+.add-note-container {
+    display: flex;
+    width: 100%;
+    padding: 16px;
+    opacity: 0.9;
+    margin: 16px 0;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 100%;
+    }
+
+    h2 {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    mat-button {
+        background: #eee;
+    }
+    
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.notes-container {
     display: flex;
     flex-grow: 2;
     flex-wrap: wrap;
     flex-basis: 25%;
     gap: 25px;
     row-gap: 30px;
+    width: 100%;
+    padding: 16px;
 
-    .task-block {
+    .note-block {
         transition: all ease 0.3s 0s;
-        padding: 16px;
+        padding: 8px 16px;
         background-color: #eee;
         opacity: 0.9;
         border-radius: 16px;
@@ -21,7 +50,7 @@
             background-color: #ddd;
         }
 
-        .task-title {
+        .note-title {
             text-align: center;
             margin: 16px 0;
         }
@@ -29,11 +58,11 @@
 }
 
 @media all and (max-width: 768px) {
-    .tasks-container {
+    .notes-container {
         padding: 0;
         display: block;
 
-        .task-block {
+        .note-block {
             width: 100%;
             margin: 16px 0;
         }

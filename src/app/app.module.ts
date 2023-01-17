@@ -13,6 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NoteDialogComponent } from './components/note-dialog/note-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { NoteDialogComponent } from './components/note-dialog/note-dialog.compon
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
