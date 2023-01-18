@@ -1,19 +1,33 @@
-<div class="add-note-container">
-    <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
-        <h2>Add your note</h2>
-        <mat-form-field appearance="fill">
-            <mat-label>Note title</mat-label>
-            <input matInput type="text" formControlName="note-title" placeholder="Write your title here..." required="true">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Note content</mat-label>
-            <textarea matInput formControlName="note-content" cols="30" rows="10" required="true" placeholder="Write your note..."></textarea>
-        </mat-form-field>
-        <button type="submit" mat-raised-button>
-            Add note
-        </button>
-    </form>
-</div>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span class="accordion-title">Add new note</span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="add-note-container">
+            <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+                <h2>Write down your note</h2>
+                <mat-form-field appearance="fill">
+                    <mat-label>Note title</mat-label>
+                    <input matInput type="text" formControlName="note-title" placeholder="Write your title here..."
+                        required="true">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Note content</mat-label>
+                    <textarea matInput formControlName="note-content" cols="30" rows="10" required="true"
+                        placeholder="Write your note..."></textarea>
+                </mat-form-field>
+                <div class="add-note-footer">
+                    <button type="submit" mat-raised-button>
+                        Add note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+
 <div class="notes-container">
     <div *ngFor="let note of notes; let noteId = index;">
         <div class="note-block" (click)="triggerModal(noteId)" title="Show more...">

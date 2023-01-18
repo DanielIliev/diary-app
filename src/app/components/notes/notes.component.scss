@@ -1,9 +1,13 @@
+mat-expansion-panel-header {
+    font-size: 16px;
+}
+
 .add-note-container {
     display: flex;
     width: 100%;
     padding: 16px;
     opacity: 0.9;
-    margin: 16px 0;
+    margin: 0;
     align-items: center;
     justify-content: center;
 
@@ -12,14 +16,18 @@
     }
 
     h2 {
-        color: #fff;
         font-weight: 600;
     }
 
-    mat-button {
-        background: #eee;
+    .add-note-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        mat-button {
+            background: #eee;
+        }
     }
-    
+
     mat-form-field {
         width: 100%;
     }
