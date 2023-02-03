@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NoteDialogComponent } from '../note-dialog/note-dialog.component';
-import { FormBuilder} from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-notes',
@@ -9,6 +9,12 @@ import { FormBuilder} from '@angular/forms';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
+  options = this._formBuilder.group({
+    bottom: 0,
+    fixed: true,
+    top: 0,
+  });
+
   notes: {
     title: string,
     content: string,
@@ -22,7 +28,7 @@ export class NotesComponent {
     'note-content': ''
   });
 
-  constructor(private dialog: MatDialog, private formBuilder: FormBuilder) {
+  constructor(private dialog: MatDialog, private formBuilder: FormBuilder, private _formBuilder: FormBuilder) {
     for (let index = 0; index < 20; index++) {
       this.notes.push(this.generateDummyNotes('Dummy title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Monday', new Date().toString(), 'medium'));
     }
@@ -47,7 +53,7 @@ export class NotesComponent {
   onSubmit(): void {
     let title = this.noteForm.controls['note-title'].value;
     let content = this.noteForm.controls['note-content'].value;
-    
+
     if (!title || !content) {
       console.warn('Empty title or content!');
       alert('Please add a title and content for your note');

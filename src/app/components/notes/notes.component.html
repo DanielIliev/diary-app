@@ -1,13 +1,10 @@
-<mat-accordion>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <span class="accordion-title">Add new note</span>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <div class="add-note-container">
+<div id="notes">
+    <!-- Note form container -->
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="side" opened class="add-note-container" [fixedInViewport]="options.value.fixed"
+            [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
             <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
-                <h2>Write down your note</h2>
+                <h1>Write down your note</h1>
                 <mat-form-field appearance="fill">
                     <mat-label>Note title</mat-label>
                     <input matInput type="text" formControlName="note-title" placeholder="Write your title here..."
@@ -24,21 +21,23 @@
                     </button>
                 </div>
             </form>
-        </div>
-    </mat-expansion-panel>
-</mat-accordion>
+        </mat-sidenav>
+    </mat-sidenav-container>
 
-<div class="notes-container">
-    <div *ngFor="let note of notes; let noteId = index;">
-        <div class="note-block" (click)="triggerModal(noteId)" title="Show more...">
-            <div class="note-title">
-                <h1>{{ note.title }}</h1>
-            </div>
-            <p class="note-content">
-                {{ note.content }}
-            </p>
-            <div class="note-info">
-                <span>Created on: {{ note.createdOn }} | Due to: {{ note.dueTo }} | Priority: {{ note.priority }}</span>
+    <!-- Notes container -->
+    <div class="notes-container">
+        <div *ngFor="let note of notes; let noteId = index;">
+            <div class="note-block" (click)="triggerModal(noteId)" title="Show more...">
+                <div class="note-title">
+                    <h1>{{ note.title }}</h1>
+                </div>
+                <p class="note-content">
+                    {{ note.content }}
+                </p>
+                <div class="note-info">
+                    <span>Created on: {{ note.createdOn }} | Due to: {{ note.dueTo }} | Priority: {{ note.priority
+                        }}</span>
+                </div>
             </div>
         </div>
     </div>
