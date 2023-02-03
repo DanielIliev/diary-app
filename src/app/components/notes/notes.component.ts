@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NoteDialogComponent } from '../note-dialog/note-dialog.component';
 import { FormBuilder } from '@angular/forms';
@@ -8,7 +8,7 @@ import { FormBuilder } from '@angular/forms';
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
-export class NotesComponent {
+export class NotesComponent implements OnInit {
   options = this._formBuilder.group({
     bottom: 0,
     fixed: true,
@@ -18,10 +18,10 @@ export class NotesComponent {
   notes: {
     title: string,
     content: string,
-    dueTo: string,
-    createdOn: string,
-    priority: string,
+    createdOn: object,
   }[] = [];
+
+  hasNotes = false;
 
   noteForm = this.formBuilder.group({
     'note-title': '',
@@ -29,9 +29,23 @@ export class NotesComponent {
   });
 
   constructor(private dialog: MatDialog, private formBuilder: FormBuilder, private _formBuilder: FormBuilder) {
-    for (let index = 0; index < 20; index++) {
-      this.notes.push(this.generateDummyNotes('Dummy title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Monday', new Date().toString(), 'medium'));
+
+  }
+
+  ngOnInit() {
+    console.log("component has been initialized!");
+    if (this.notes.length === 0) {
+      this.notes.push(
+        {
+          title: 'You have no notes :(',
+          content: '',
+          createdOn: new Date(),
+        }
+      )
     }
+    // for (let index = 0; index < 20; index++) {
+    //   this.notes.push(this.generateDummyNotes('Dummy title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Monday', new Date().toString(), 'medium'));
+    // }
   }
 
   triggerModal(noteId: number) {

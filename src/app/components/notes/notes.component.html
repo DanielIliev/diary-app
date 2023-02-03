@@ -35,8 +35,7 @@
                     {{ note.content }}
                 </p>
                 <div class="note-info">
-                    <span>Created on: {{ note.createdOn }} | Due to: {{ note.dueTo }} | Priority: {{ note.priority
-                        }}</span>
+                    <span *ngIf="hasNotes">Created on: {{ note.createdOn }}</span>
                 </div>
             </div>
         </div>
