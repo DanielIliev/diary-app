@@ -1,0 +1,22 @@
+.landing-page {
+    background-color: #eee;
+    opacity: 0.9;
+    margin: 0% 1%;
+    padding: 16px;
+
+    .page-content {
+        font-size: 18px;
+    }
+
+    .disclaimer {
+        font-weight: 600;
+        color: #ff0000;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .landing-page {
+        margin: 15% 1%;
+        padding: 8px;
+    }
+}

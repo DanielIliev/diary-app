@@ -26,8 +26,13 @@
 
     <!-- Notes container -->
     <div class="notes-container">
-        <div *ngFor="let note of notes; let noteId = index;">
-            <div class="note-block" (click)="triggerModal(noteId)" title="Show more...">
+        <div class="note-block" *ngIf="!hasNotes">
+            <div class="note-title">
+                <h1>You have no notes :(</h1>
+            </div>
+        </div>
+        <div *ngIf="hasNotes">
+            <div class="note-block" *ngFor="let note of notes; let noteId = index;" (click)="triggerModal(noteId)" title="Show more...">
                 <div class="note-title">
                     <h1>{{ note.title }}</h1>
                 </div>
@@ -35,7 +40,7 @@
                     {{ note.content }}
                 </p>
                 <div class="note-info">
-                    <span *ngIf="hasNotes">Created on: {{ note.createdOn }}</span>
+                    <span>Created on: {{ note.createdOn }}</span>
                 </div>
             </div>
         </div>

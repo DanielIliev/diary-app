@@ -35,13 +35,7 @@ export class NotesComponent implements OnInit {
   ngOnInit() {
     console.log("component has been initialized!");
     if (this.notes.length === 0) {
-      this.notes.push(
-        {
-          title: 'You have no notes :(',
-          content: '',
-          createdOn: new Date(),
-        }
-      )
+      this.hasNotes = false;
     }
     // for (let index = 0; index < 20; index++) {
     //   this.notes.push(this.generateDummyNotes('Dummy title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Monday', new Date().toString(), 'medium'));
@@ -54,15 +48,15 @@ export class NotesComponent implements OnInit {
     });
   }
 
-  generateDummyNotes(title: string, content: string, dueTo: string, createdOn: string, priority: string) {
-    return {
-      title,
-      content,
-      dueTo,
-      createdOn,
-      priority
-    }
-  }
+  // generateDummyNotes(title: string, content: string, dueTo: string, createdOn: string, priority: string) {
+  //   return {
+  //     title,
+  //     content,
+  //     dueTo,
+  //     createdOn,
+  //     priority
+  //   }
+  // }
 
   onSubmit(): void {
     let title = this.noteForm.controls['note-title'].value;
@@ -72,7 +66,13 @@ export class NotesComponent implements OnInit {
       console.warn('Empty title or content!');
       alert('Please add a title and content for your note');
     } else {
-      console.log(title, content);
+      // console.log(title, content);
+      this.notes.push({
+        'title': title,
+        'content': content,
+        'createdOn': new Date()
+      });
+      this.hasNotes = true;
     }
 
     this.noteForm.reset();
